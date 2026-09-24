@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Attendance System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+</head>
+<body>
+    <h1 class="main-title">QR Code Attendance System</h1>
+
+    <div class="top-container">
+        <!-- Card 1 -->
+        <div class="card">
+            <h3>Add Student & Generate QR Code</h3>
+            <input type="text" id="studentName" placeholder="Enter Name">
+            <input type="text" id="rollNumber" placeholder="Enter Roll Number">
+            <button class="blue-btn" onclick="generateQR()">Generate QR Code</button>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <h3>Generated QR Code</h3>
+            <p id="qrDetails" style="font-size:12px; font-weight:bold; margin:5px 0;"></p>
+            <div id="qrcode"></div>
+            <button id="downloadBtn" class="blue-btn" style="display:none;" onclick="downloadQR()">Download QR</button>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+            <h3>Mark Attendance (Scan QR)</h3>
+            <div id="reader"></div>
+        </div>
+    </div>
+
+    <div class="table-card">
+        <h3>Attendance Table</h3>
+        <table id="attendanceTable">
+            <thead>
+                <tr>
+                    <th>Roll Number</th>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>Attendance Count</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
